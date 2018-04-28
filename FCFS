@@ -1,0 +1,35 @@
+
+y =0
+x=0
+no_process = input('Enter no of Processes: ')
+b_time = [0]*no_process
+f_time = [0]*no_process
+a_time = [0]*no_process
+t_time = [0]*no_process
+w_time = [0]*no_process
+final = 0
+start = 0
+
+for x in range(no_process):
+	a_time[x] = input('Enter arrival Time:')
+
+for y in range(no_process):
+	b_time[y] = input('Enter Bus Time:')
+print '\n'
+
+for y in range(no_process):
+	final = final + b_time[y]
+	f_time[y] = final;
+	t_time[y] = f_time[y] - a_time[y]
+	print 'Turn around time for proess#',y,'is', t_time[y]
+print '\n'
+
+for y in range(no_process):
+	if y == 0:
+	  wait = 0
+	  w_time[y] = wait
+	  
+	else:
+	  start = b_time[y-1]
+	  w_time[y] = start - a_time[y]
+        print 'Waiting Time for Process#',y,'is',w_time[y]

@@ -23,7 +23,6 @@ for y in range(no_process):
 	t_time[y] = f_time[y] - a_time[y]
 	print 'Turn around time for proess#',y,'is', t_time[y]
 print '\n'
-
 for y in range(no_process):
 	if y == 0:
 	  wait = 0
